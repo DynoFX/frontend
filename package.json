@@ -1,0 +1,33 @@
+{
+    "name": "dynofx",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
+        "start-client": "npm --prefix client start",
+        "start-server": "npm --prefix server start",
+        "build": "npm run build-client && npm run build-server",
+        "build-client": "npm --prefix client run build",
+        "build-server": "echo 'Server build script goes here'",
+        "test": "concurrently \"npm run test-client\" \"npm run test-server\"",
+        "test-client": "npm --prefix client run test",
+        "test-server": "echo 'Server test script goes here'",
+        "dev": "concurrently \"npm run dev-client\" \"npm run dev-server\"",
+        "dev-client": "npm --prefix client run start",
+        "dev-server": "npm --prefix server run dev"
+    },
+    "dependencies": {
+        "@eslint/config-array": "^0.18.0",
+        "@eslint/object-schema": "^2.1.4",
+        "concurrently": "^8.2.0",
+        "glob": "^11.0.0",
+        "lru-cache": "^11.0.0",
+        "rimraf": "^6.0.1"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "eslint": "^8.57.0",
+        "husky": "^9.1.4",
+        "prettier": "^3.3.3"
+    }
+}
